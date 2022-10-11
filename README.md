@@ -32,6 +32,7 @@ Cogs for the [RED](https://github.com/Cog-Creators/Red-DiscordBot/)-based [Homel
   - [Report](#report)
   - [Roleinfo](#roleinfo)
   - [Sentry](#sentry)
+  - [Timeout](#timeout)
   - [Verify](#verify)
   - [xkcd](#xkcd)
 - [License](#license)
