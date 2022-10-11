@@ -270,10 +270,15 @@ Configure Sentry DSN using `[p]set api sentry dsn,https://fooo@bar.baz/9`, then 
 
 Manage the timeout status of users. Run the command to add a user to timeout, run it again to remove them.
 
+This cog is designed for guilds which have a private channel used to discuss infractions or otherwise with a given member 1-1.  
+This private channel should be readable only by mods, admins, and the timeout role.
+
+**Note:** This cog does not manage Discord's builtin "time out" functionality. It is unrelated.
+
 - `[p]timeout <user>` - Add/remove a user from timeout.
 - `[p]timeoutset list` - Print the current configuration.
 - `[p]timeoutset role <role name>` - Set the timeout role.
-- `[p]timeoutset report <bool>` - Set whether timeout reports should be logged or not.
+- `[p]timeoutset report <enable|disable>` - Set whether timeout reports should be logged or not.
 - `[p]timeoutset logchannel <channel>` - Set the log channel.
 
 ### Verify
