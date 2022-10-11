@@ -11,9 +11,9 @@ class Timeout(commands.Cog):
     def __init__(self):
         self.config = Config.get_conf(self, identifier=539343858187161140)
         default_guild = {
-            "logchannel": "",
-            "report": "",
-            "timeoutrole": ""
+            "logchannel": None,
+            "report": False,
+            "timeoutrole": None
         }
         self.config.register_guild(**default_guild)
         self.config.register_member(
@@ -202,12 +202,12 @@ class Timeout(commands.Cog):
         else:
             log_channel = "Unconfigured"
 
-        if timeout_role is not None:
+        if timeout_role:
             timeout_role = timeout_role.name
         else:
             timeout_role = "Unconfigured"
 
-        if report == "":
+        if not report:
             report = "Unconfigured"
 
         # Build embed
