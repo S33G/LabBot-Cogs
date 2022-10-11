@@ -225,7 +225,7 @@ class Timeout(commands.Cog):
 
     @commands.command()
     @checks.mod()
-    async def timeout(self, ctx: commands.Context, user: discord.Member, *, reason="Unspecified"):
+    async def timeout(self, ctx: commands.Context, user: discord.Member, *, reason: str = None):
         """Timeouts a user or returns them from timeout if they are currently in timeout.
 
         See and edit current configuration with `[p]timeoutset`.
@@ -253,6 +253,10 @@ class Timeout(commands.Cog):
         if ctx.guild.me.top_role <= user.top_role or user == ctx.guild.owner:
             await ctx.send("I cannot do that due to Discord hierarchy rules.")
             return
+
+        # Assign reason string if not specified by user
+        if reason is None:
+            reason = "Unspecified"
 
         # Check if user already in timeout.
         # Remove & restore if so, else timeout.
